@@ -29,3 +29,6 @@ xtk.js
 
 # nfs
 *.nfs*
+
+#The google closure library
+lib/google-closure-library/

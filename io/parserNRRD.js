@@ -76,7 +76,7 @@ X.parserNRRD.prototype.parse = function(container, object, data, flag) {
     if (_bytes[i - 1] == 10 && _bytes[i] == 10) {
       // we found two line breaks in a row
       // now we know what the header is
-      _header = this.parseChars(_bytes, 0, i - 2);
+      _header = this.parseChars(_bytes, 0, i - 1);
       // this is were the data starts
       _data_start = i + 1;
       break;

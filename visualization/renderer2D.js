@@ -1161,15 +1161,22 @@ X.renderer2D.prototype.render_ = function(picking, invoked) {
 
           } else {
 
-            // show only the label which matches in color
-            if (X.array.compare(_labelmapShowOnlyColor, _labelData, 0, _index,
-                4)) {
+						// Loop through all labels
+						for (var j = 0; j < _labelmapShowOnlyColor.length; j++) {
+							var _row = _labelmapShowOnlyColor[j];
 
-              // this label matches
-              _label = [_labelData[_index], _labelData[_index + 1],
-                        _labelData[_index + 2], _labelData[_index + 3]];
+							// show only the label which matches in color
+							if (X.array.compare(_row, _labelData, 0, _index,
+									4)) {
 
-            }
+								// this label matches
+								_label = [_labelData[_index], _labelData[_index + 1],
+													_labelData[_index + 2], _labelData[_index + 3]];
+								break;
+
+							}
+
+						}
 
           }
 

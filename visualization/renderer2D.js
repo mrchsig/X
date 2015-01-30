@@ -1327,6 +1327,7 @@ X.renderer2D.prototype.render_ = function(picking, invoked) {
         this._context.lineTo(this._interactor._mousePosition[0],
             this._height);
         this._context.strokeStyle = this._orientationColors[0];
+				this._context.lineWidth = 3;
         this._context.stroke();
         this._context.closePath();
 
@@ -1339,16 +1340,25 @@ X.renderer2D.prototype.render_ = function(picking, invoked) {
         this._context.lineTo(this._width,
             this._interactor._mousePosition[1]);
         this._context.strokeStyle = this._orientationColors[1];
+				this._context.lineWidth = 3;
         this._context.stroke();
         this._context.closePath();
 
         // write ijk coordinates
-        this._context.font = '10pt Arial';
+        this._context.font = '11pt Arial';
         // textAlign aligns text horizontally relative to placement
         this._context.textAlign = 'left';
         // textBaseline aligns text vertically relative to font style
         this._context.textBaseline = 'top';
-        this._context.fillStyle = 'white';
+
+				if (_volume) {
+					if (_volume.minColor[0] < _volume.maxColor[0]) {
+		      	this._context.fillStyle = 'white';
+					} else {
+						this._context.fillStyle = 'black';
+					}
+				}
+
         this._context.fillText('RAS: ' + ijk[2][0].toFixed(2) + ', ' + ijk[2][1].toFixed(2) + ', ' + ijk[2][2].toFixed(2), 0, 0);
 
         var _value = 'undefined';

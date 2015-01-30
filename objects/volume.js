@@ -1652,8 +1652,7 @@ X.volume.prototype.volumeRendering_ = function(direction) {
 
         _child._children[i]._visible = true;
 
-      }
-      else{
+      } else {
 
         _child._children[i]._visible = true;
 
@@ -1697,8 +1696,7 @@ X.volume.prototype.volumeRendering_ = function(direction) {
 
           _child._children[i]._visible = true;
 
-        }
-        else{
+        } else{
 
           _child._children[i]._visible = true;
 

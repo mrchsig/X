@@ -112,7 +112,7 @@ X.camera2D.prototype.zoomIn = function(fast) {
 
   if (goog.isDefAndNotNull(fast) && !fast) {
 
-  zoomStep = .02;
+  	zoomStep = zoomStep / 100;
 
   }
 
@@ -130,7 +130,7 @@ X.camera2D.prototype.zoomOut = function(fast) {
 
   if (goog.isDefAndNotNull(fast) && !fast) {
 
-    zoomStep = .02;
+    zoomStep = zoomStep / 100;
 
   }
 
